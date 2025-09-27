@@ -1,22 +1,25 @@
-name: My first workflow
+name: Hello World
 
-on: push
+on:
+  push:
 
 jobs:
-    first_job:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout Repo
-              uses: actions/checkout@v5
-            - name: List and Read file
-              run: |
-                echo "My first github action workflow"
-                ls -ltra
-                cat README.md
-            - name: Generate ASCII Artwork
-              run:  cowsay -f tiger "Run for Cover, I am a TIGER....Saurav" >> tiger.txt
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo text
+        run: echo "Hello, world!"
 
-           # - name : List files
-           #   run: ls
-            # run: cat README.md
-            
+  test:
+    needs: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo text
+        run: echo "Hello, world!"
+
+  Deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo text
+        run: echo "Hello, world!"
