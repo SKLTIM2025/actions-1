@@ -14,7 +14,7 @@ jobs:
                 ls -ltra
                 cat README.md
             - name: Generate ASCII Artwork
-              run: cowsay -f tiger "Run for Cover, I am a TIGER....Saurav" >> tiger.txt
+              run:  cowsay -f tiger "Run for Cover, I am a TIGER....Saurav" >> tiger.txt
 
            # - name : List files
            #   run: ls
