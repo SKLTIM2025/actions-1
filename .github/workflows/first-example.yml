@@ -8,10 +8,15 @@ jobs:
         steps:
             - name: Checkout Repo
               uses: actions/checkout@v5
-            - name: welcome message
-              run: echo "My first github action workflow"
-            - name : List files
-              run: ls
-            - name : Read the file
-              run: cat README.md
+            - name: List and Read file
+              run: |
+                echo "My first github action workflow"
+                ls ltra
+                cat README.md
+            - name: Generate ASCII Artwork
+              run: cowsay -f tiger "Run for Cover, I am a TIGER....Saurav" >> tiger.txt
+
+           # - name : List files
+           #   run: ls
+            # run: cat README.md
             
